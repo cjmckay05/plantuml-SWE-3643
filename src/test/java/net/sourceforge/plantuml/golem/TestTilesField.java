@@ -27,7 +27,6 @@ public class TestTilesField {
 
     @Test
     public void testCreateTileNorthPosition() {
-    		tilesField = new TilesField();
     		Tile start = tilesField.getRoot();
         Tile dest = new Tile(1);
         TileGeometry startDirection = TileGeometry.NORTH;
@@ -47,7 +46,8 @@ public class TestTilesField {
 
     @Test
     public void testCreateTileInvalidTile() {
-
+				TileGeometry startGeom = TileGeometry.NORTH;
+    		assertThrows(IllegalArgumentException.class, tilesField.createTile(Tile(15), startGeom));
     }
 
     @Test
